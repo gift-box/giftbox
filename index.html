@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap 101 Template</title>
+  <title>GiftBox</title>
 
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
   <style>
-    /* Makes images fully responsive */
 
     html,body {height:100%;}
 
@@ -111,6 +109,23 @@
       float:none;
     }
 
+    #calculator .row {
+      margin-bottom: 5px;
+    }
+
+    #calculator input {
+      width: 100%;
+      text-align: center;
+    }
+
+    #calculator label {
+      font-weight: normal;
+    }
+
+    .item div.tag {
+      display: none;
+    }
+
   </style>
 </head>
 <body>
@@ -144,9 +159,11 @@
           </div>
         </div>
 
+        <div class="tag">начало</div>
         <div class="carousel-caption">
-          <h2>GIFT BOX - это виртуальный подарок ручной работы.</h2>
+          <h2>GiftBox - это виртуальный подарок ручной работы.</h2>
         </div>
+
       </div>
 
       <!--
@@ -172,27 +189,33 @@
         <div class="row" style="height: 100%; margin-top: 2em">
           <div class="col-md-5 col-md-offset-1" style="height: 100%">
 
-            <div class="tabs-story" style="height: 30%">
+            <div>
+              Да, всё настолько просто.
+              А для того, чтобы убедиться в этом еще раз - несколько примеров.
+            </div>
+
+            <div class="tabs-story" style="height: 30%; margin-top: 10px">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="active"><a href="#story-1" role="tab" data-toggle="tab">Наташа</a></li>
                 <li><a href="#story-2" role="tab" data-toggle="tab">Серёжа</a></li>
-                <li><a href="#calculator" role="tab" data-toggle="tab">Калькулятор</a></li>
+                <li><a href="#calculator" role="tab" data-toggle="tab">Твой доход</a></li>
               </ul>
 
               <!-- Tab panes -->
-              <div class="tab-content">
+              <div class="tab-content" style="margin-top: 5px">
                 <div class="tab-pane active" id="story-1">
-                  Наташа вместо покупки платья за 1 тыс. руб. приобрела GIFT BOX и всего через неделю купила 5 платьев. Ее шаги:
+                  Наташа вместо покупки платья за 1000 &#8381; приобрела GiftBox и всего через неделю купила 5 платьев.
+                  Ее шаги:
                   <ol>
                     <li>
-                      Вместо покупки платья купила GiftBox за 1 000 руб
+                      Вместо покупки платья купила GiftBox за 1000 &#8381;
                     </li>
                     <li>
-                      Обзвонила подруг и за каждую, купившую такую же коробку получила 70%, а это - 700 руб.
+                      Обзвонила подруг и за каждую, купившую такую же коробку, получила 70%, а это - 700 &#8381;.
                     </li>
                     <li>
-                      После пары дней и дюжины приведенных друзей радостно отправилась по магазинам.
+                      После пары дней и всего нескольких приведенных друзей радостно отправилась по магазинам.
                     </li>
                   </ol>
                 </div>
@@ -200,7 +223,7 @@
                   А вот простой пример, как Сережа за неделю заработал на iPhone.
                   <ol>
                     <li>
-                      Вместо похода в клубы купил GiftBox за 5 000 руб;
+                      Вместо похода в клубы купил GiftBox за 5000 &#8381;;
                     </li>
                     <li>
                       Обзвонил друзей и знакомых и за каждого купившего такую же коробку получил 70%, а это - 3500.
@@ -210,7 +233,69 @@
                     </li>
                   </ol>
                 </div>
-                <div class="tab-pane" id="calculator">...</div>
+                <div class="tab-pane" id="calculator">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="calc-friends">
+                          Число друзей в социальной сети
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="calc-friends" value="300"/>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="calc-price">
+                          Стоимость GiftBox
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <select id="calc-price">
+                          <option value="1000">1000 &#8381;</option>
+                          <option value="5000" selected="selected">5000 &#8381;</option>
+                          <option value="20000">20000 &#8381;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="calc-percentage">
+                          Число успешных продаж
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="calc-percentage" value="60%" readonly="readonly"/>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="calc-each">
+                          Заработок с каждой покупки
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="calc-each" readonly="readonly"/>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="calc-total">
+                          Ожидаемый доход
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="calc-total" readonly="readonly"/>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -232,10 +317,11 @@
           </div>
 
           <div class="col-md-5" style="height: 100%; text-align: center">
-            <embed width="320px" height="320px" src="http://www.youtube.com/v/XGSy3_Czz8k">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/KJWJfRAGnHc?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
 
+        <div class="tag">как-заработать</div>
         <div class="carousel-caption">
         </div>
 
@@ -293,10 +379,11 @@
           </div>
 
           <div class="col-md-5" style="text-align: center">
-            <embed width="320px" height="320px" src="http://www.youtube.com/v/XGSy3_Czz8k">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/KJWJfRAGnHc?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
 
+        <div class="tag">механизм</div>
         <div class="carousel-caption carousel-caption-top">
           <h2>Как это работает</h2>
         </div>
@@ -359,11 +446,11 @@
           </div>
 
           <div class="col-md-5" style="height: 100%; text-align: center">
-            <embed width="320px" height="320px" src="http://www.youtube.com/v/XGSy3_Czz8k">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/KJWJfRAGnHc?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
 
-
+        <div class="tag">советы</div>
         <div class="carousel-caption carousel-caption-top">
           <h2>Несколько советов</h2>
         </div>
@@ -380,6 +467,7 @@
         <div class="carousel-caption-top">
           <h2>Обратная связь</h2>
         </div>
+        <div class="tag">вопросы</div>
         <div class="carousel-caption">
         </div>
       </div>
@@ -396,25 +484,32 @@
 
 </div>
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.js"></script>
-<script src="js/jssor.utils.js"></script>
-<script src="js/jssor.core.js"></script>
-<script src="js/jssor.slider.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script src="js/scripts.js"></script>
 
 <script>
 
-//  jQuery(document).ready(function ($) {
-//    var options = { $BulletNavigatorOptions: {
-//      $Class: $JssorBulletNavigator$,
-//      $ChanceToShow: 2
-//    } };
-//    var jssor_slider1 = new $JssorSlider$('slider_container', options);
-//  });
+  $(function () {
+    page.init($('.carousel'));
+    updateCalcValue();
+  });
+
+  function updateCalcValue() {
+    var nFriends = parseInt($('#calc-friends').val()),
+        giftBoxValue = parseInt($('#calc-price').val());
+
+    var results = page.calcTotalRevenue(nFriends, giftBoxValue, 0.6);
+
+    $('#calc-each').val(page.asMoney(results.perEach));
+    $('#calc-total').val(page.asMoney(results.total));
+  }
+
+  $('#calc-friends').on('input', updateCalcValue);
+  $('#calc-price').on('input', updateCalcValue);
 
 </script>
 </body>
+} else {
 </html>
