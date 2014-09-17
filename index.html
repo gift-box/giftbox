@@ -15,124 +15,20 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style>
-
-    html,body {height:100%;}
-
-    .container-fluid {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    .img-responsive,
-    .thumbnail > img,
-    .thumbnail a > img,
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-      display: block;
-      width: 100%;
-    }
-
-    /* ------------------- Carousel Styling ------------------- */
-
-    .carousel-inner {
-      border-radius: 15px;
-    }
-
-    .carousel-caption {
-      height: 70px;
-    }
-
-    div.item > .row:first-child {
-      padding-top: 85px;
-    }
-
-    .carousel-caption {
-      background-color: rgba(0,0,0,.5);
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 10;
-      padding: 0 0 10px 25px;
-      color: #fff;
-      text-align: left;
-    }
-
-    .carousel-caption-top {
-      background-color: rgba(0,0,0,.5);
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: auto;
-      top: 0;
-      z-index: 10;
-      padding: 0 0 10px 25px;
-      color: #fff;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-      text-align: center;
-    }
-
-    .carousel-indicators {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      z-index: 15;
-      margin: 0;
-      padding: 0 25px 25px 0;
-      text-align: right;
-    }
-
-    .carousel-control.left,
-    .carousel-control.right {
-      background-image: none;
-      width: 5%;
-    }
-
-    .item {
-      height: 100%;
-    }
-
-    .page0 {
-      background: url("img/back-1.jpeg") no-repeat center;
-    }
-
-    .center-row {
-      display:table;
-    }
-
-    .center {
-      display:table-cell;
-      vertical-align:middle;
-      float:none;
-    }
-
-    #calculator .row {
-      margin-bottom: 5px;
-    }
-
-    #calculator input {
-      width: 100%;
-      text-align: center;
-    }
-
-    #calculator label {
-      font-weight: normal;
-    }
-
-    .item div.tag {
-      display: none;
-    }
-
-  </style>
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
 
 <div class="container-fluid" style="height: 100%; font-size: medium">
 
-  <div id="carousel-example-generic" class="carousel slide" style="height: 100%" data-wrap="false">
+  <div id="carousel-example-generic"
+       class="carousel slide"
+       style="height: 100%"
+       data-wrap="false"
+       data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -205,14 +101,15 @@
               <!-- Tab panes -->
               <div class="tab-content" style="margin-top: 5px">
                 <div class="tab-pane active" id="story-1">
-                  Наташа вместо покупки платья за 1000 &#8381; приобрела GiftBox и всего через неделю купила 5 платьев.
+                  Наташа вместо покупки платья за <span class="price">1000 &#8399;</span> приобрела GiftBox
+                  и всего через неделю купила 5 платьев.
                   Ее шаги:
                   <ol>
                     <li>
-                      Вместо покупки платья купила GiftBox за 1000 &#8381;
+                      Вместо покупки платья купила GiftBox за <span class="price">1000 &#8399;</span>
                     </li>
                     <li>
-                      Обзвонила подруг и за каждую, купившую такую же коробку, получила 70%, а это - 700 &#8381;.
+                      Обзвонила подруг и за каждую, купившую такую же коробку, получила 70%, а это - <span class="price">1000 &#8399;</span>.
                     </li>
                     <li>
                       После пары дней и всего нескольких приведенных друзей радостно отправилась по магазинам.
@@ -223,10 +120,11 @@
                   А вот простой пример, как Сережа за неделю заработал на iPhone.
                   <ol>
                     <li>
-                      Вместо похода в клубы купил GiftBox за 5000 &#8381;;
+                      Вместо похода в клубы купил GiftBox за <span class="price">5000 &#8399;</span>;
                     </li>
                     <li>
-                      Обзвонил друзей и знакомых и за каждого купившего такую же коробку получил 70%, а это - 3500.
+                      Обзвонил друзей и знакомых и за каждого купившего такую же коробку получил 70%,
+                      а это - <span class="price">3500 &#8399;</span>.
                     </li>
                     <li>
                       После пары дней и дюжины приведенных друзей отправился за покупкой.
@@ -253,10 +151,10 @@
                         </label>
                       </div>
                       <div class="col-md-6">
-                        <select id="calc-price">
-                          <option value="1000">1000 &#8381;</option>
-                          <option value="5000" selected="selected">5000 &#8381;</option>
-                          <option value="20000">20000 &#8381;</option>
+                        <select id="calc-price" class="price">
+                          <option value="1000">1 000 &#8399;</option>
+                          <option value="5000" selected="selected">5 000 &#8399;</option>
+                          <option value="20000">20 000 &#8399;</option>
                         </select>
                       </div>
                     </div>
@@ -507,9 +405,8 @@
   }
 
   $('#calc-friends').on('input', updateCalcValue);
-  $('#calc-price').on('input', updateCalcValue);
+  $('#calc-price').on('change', updateCalcValue);
 
 </script>
 </body>
-} else {
 </html>

@@ -1,0 +1,109 @@
+html,body {height:100%;}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+
+.carousel-inner {
+  border-radius: 15px;
+}
+
+.carousel-caption {
+  height: 70px;
+}
+
+div.item > .row:first-child {
+  padding-top: 85px;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-caption-top {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: 0;
+  z-index: 10;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  text-align: center;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+  width: 5%;
+}
+
+.item {
+  height: 100%;
+}
+
+.page0 {
+  background: url("../img/back-1.jpeg") no-repeat center;
+}
+
+.center-row {
+  display:table;
+}
+
+.center {
+  display:table-cell;
+  vertical-align:middle;
+  float:none;
+}
+
+#calculator .row {
+  margin-bottom: 5px;
+}
+
+#calculator input {
+  width: 100%;
+  text-align: center;
+}
+
+#calculator label {
+  font-weight: normal;
+}
+
+.item div.tag {
+  display: none;
+}
+
