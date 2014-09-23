@@ -54,6 +54,14 @@ var page = {
 
   calcTotalRevenue: function (nFriends, giftBoxValue) {
     var successRate = 0.3;
+    if (giftBoxValue == 1000) {
+      successRate = 0.2;
+    } else if (giftBoxValue == 5000) {
+      successRate = 0.1;
+    } else if (giftBoxValue == 10000) {
+      successRate = 0.1;
+    }
+
     return {
       perEach: parseInt(giftBoxValue * 0.7),
       total: parseInt(nFriends * giftBoxValue * successRate * 0.7)
