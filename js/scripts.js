@@ -4,6 +4,9 @@ var page = {
 
   init: function ($carousel) {
 
+    var $arrowRight = $carousel.find('a.carousel-control.right'),
+        $arrowLeft = $carousel.find('a.carousel-control.left');
+
     // Check URL hash and open the corresponding tab.
 
     var url = document.location.toString();
@@ -28,11 +31,29 @@ var page = {
       window.location.hash = "#" + tag;
     };
 
+    var toggleArrows = function () {
+      var idx = $carousel.find('.carousel-inner .item.active').index();
+
+      $arrowLeft.toggle(idx != 0);
+      $arrowRight.toggle(idx != 4);
+    };
+
     $carousel.bind('slid.bs.carousel', updateHash);
+    $carousel.bind('slid.bs.carousel', toggleArrows);
     $(window).bind('hashchange', updateHash);
+
+    toggleArrows();
+
+    // Bind keyboard events.
+
+    $(document).bind('keydown', function (e) {
+      if (e.keyCode == 39)          $arrowRight.trigger('click');
+      else if (e.keyCode == 37)     $arrowLeft.trigger('click');
+    });
   },
 
-  calcTotalRevenue: function (nFriends, giftBoxValue, successRate) {
+  calcTotalRevenue: function (nFriends, giftBoxValue) {
+    var successRate = 0.3;
     return {
       perEach: parseInt(giftBoxValue * 0.7),
       total: parseInt(nFriends * giftBoxValue * successRate * 0.7)
@@ -44,10 +65,6 @@ var page = {
   },
 
   asMoney: function (val) {
-    if (isNaN(val)) {
-      return '';
-    } else {
-      return this.formatMoney(val);
-    }
+    return isNaN(val) ? '' : this.formatMoney(val);
   }
 };

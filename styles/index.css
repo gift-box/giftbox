@@ -77,7 +77,29 @@ div.item > .row:first-child {
 }
 
 .page0 {
-  background: url("../img/back-1.jpeg") no-repeat center;
+  background: url("../img/girl-2.jpeg") no-repeat bottom right;
+  background-size: auto 100%;
+}
+
+.page0 .option-type {
+  text-align: center;
+  margin-right: 3em;
+
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #888888;
+
+  cursor: pointer;
+
+  transition: box-shadow 0.07s;
+}
+
+.page0 .option-type:hover {
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.page0 .option-type span:first-child {
+
 }
 
 .center-row {
@@ -85,9 +107,21 @@ div.item > .row:first-child {
 }
 
 .center {
-  display:table-cell;
-  vertical-align:middle;
-  float:none;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.center.col-md-3, .center.col-md-2, .center.col-md-4 {
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #888888;
+  transition: box-shadow 0.07s;
+  cursor: pointer;
+}
+
+.center.col-md-3:hover, .center.col-md-2:hover, .center.col-md-4:hover {
+  box-shadow: 5px 5px 10px #888888;
 }
 
 #calculator .row {
@@ -109,4 +143,11 @@ div.item > .row:first-child {
 
 #calc-results div:nth-child(2) {
     font-weight: bolder;
+}
+
+.youtube-stub-play {
+  background: url(../img/play.png) no-repeat scroll 0 0 transparent;
+  height: 77px;
+  width: 77px;
+  position: relative;
 }
